@@ -1,12 +1,12 @@
 
-const Pagination = ({index, avance, retroceso}) =>{
-
-    return(
+const Pagination = ({ index, retroceso, avance }) => {
+    return (
         <div>
-            <button disable={index <= 1 ? true : false} onClick={avance}>Avance</button>
-            <button disable={index >= 40 ? true : false} onClick={retroceso}>Retroceso</button>
+            <button disabled={index <= 1 ? true : false} onClick={retroceso}>Retroceso</button>
+            <button disabled={index >= 40 ? true : false} onClick={avance}>Avance</button>
         </div>
     )
 }
 
 export default Pagination;
+

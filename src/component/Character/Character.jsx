@@ -1,20 +1,25 @@
- 
 
-const Character = ({image, name, species, type, gender, status, id}) =>{
-    return(
-        <div>
-            <div>
+import { Link } from 'react-router-dom';
+
+const Character = ({image, name, species, type, gender, status, id}) => {
+  
+    
+    return (
+        <div className='card'>
+            <div className='card_img'>
                 <img src={image} alt={name} />
             </div>
-            <div>
-                <h3>Name:{name}</h3>
-                <h3>Species:{species}</h3>
-                <p>Gender: {gender}</p>
-                <p>Status: {status}</p>
-                <h4>Type: {type}</h4>
+            <div className='card_data'>
+                <h3>{name}</h3>
+                <h3>{species}</h3>
+                <h4>{type}</h4>
+                <span> {gender} </span>
+                <p>{status}</p>
+                <Link to={`detailcharacter/${id}`} >Ver mas</Link>
             </div>
         </div>
-    )
+    );
 }
 
 export default Character;
+
